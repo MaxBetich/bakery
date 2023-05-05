@@ -17,6 +17,18 @@ namespace Bakery
       Console.WriteLine("For every two loaves of bread purchased, we will include a third loaf for free!");
       Console.WriteLine("For every three pastries purchased, we will include a fourth pastry of your choice for free!");
       Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~");
+      Console.WriteLine("Please enter the number of loaves of bread you are interested in purchasing:");
+      int bread = int.Parse(Console.ReadLine());
+      Console.WriteLine("Please enter the number of pastries you are interested in purchasing:");
+      int pastries = int.Parse(Console.ReadLine());
+      Bread newBread = new Bread();
+      newBread.Count = bread;
+      Pastry newPastry = new Pastry();
+      newPastry.Count = pastries;
+      int breadPrice = newBread.GetPrice();
+      int pastryPrice = newPastry.GetPrice();
+      int totalPrice = breadPrice + pastryPrice;
+      Console.WriteLine("Your total for {0} loaves and {1} pastries is {2} dollars", bread, pastries, totalPrice);
     }
   }
 }
