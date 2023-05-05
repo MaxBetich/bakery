@@ -21,5 +21,15 @@ namespace Bakery.Tests
       newBread.Count = newCount;
       Assert.AreEqual(newCount, newBread.Count);
     }
+
+    [TestMethod]
+    public void GetCount_ReturnsCount_Int()
+    {
+      int count = 3;
+      Bread newBread = new Bread();
+      newBread.Count = 3;
+      int result = newBread.Count;
+      Assert.AreEqual(count, result);
+    }
   }
 }
