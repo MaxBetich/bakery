@@ -4,8 +4,9 @@ namespace BakeryProject.Models
   {
     public int Count {get; set;}
 
-    public int GetPrice(int count)
+    public int GetPrice()
     {
+      int count = this.Count;
       int price = 5 * count;
       return price;
     }
