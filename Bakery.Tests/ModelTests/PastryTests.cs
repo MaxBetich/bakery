@@ -40,5 +40,14 @@ namespace Bakery.Tests
       int price = newPastry.GetPrice();
       Assert.AreEqual(6, price);
     }
+
+    [TestMethod]
+    public void GetPrice_ReturnsPriceOfFourItems_Int()
+    {
+      Pastry newPastry = new Pastry();
+      newPastry.Count = 4;
+      int price = newPastry.GetPrice();
+      Assert.AreEqual(6, price);
+    }
   }
 }
