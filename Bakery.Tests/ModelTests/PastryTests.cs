@@ -36,7 +36,7 @@ namespace Bakery.Tests
     public void GetPrice_ReturnsPriceOfThreeItems_Int()
     {
       Pastry newPastry = new Pastry();
-      newPastry.Count = 2;
+      newPastry.Count = 3;
       int price = newPastry.GetPrice();
       Assert.AreEqual(6, price);
     }
