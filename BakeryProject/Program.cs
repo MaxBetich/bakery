@@ -18,7 +18,9 @@ namespace Bakery
       Console.WriteLine("For every three pastries purchased, we will include a fourth pastry of your choice for free!");
       Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~");
       Console.WriteLine("Please enter the number of loaves of bread you are interested in purchasing:");
-      int bread = int.Parse(Console.ReadLine());
+      try
+      {
+        int bread = int.Parse(Console.ReadLine());
       Console.WriteLine("Please enter the number of pastries you are interested in purchasing:");
       int pastries = int.Parse(Console.ReadLine());
       Bread newBread = new Bread();
@@ -29,6 +31,18 @@ namespace Bakery
       int pastryPrice = newPastry.GetPrice();
       int totalPrice = breadPrice + pastryPrice;
       Console.WriteLine("Your total for {0} loaves and {1} pastries is {2} dollars", bread, pastries, totalPrice);
+      }
+      catch(Exception ex)
+      {
+        Console.WriteLine(ex.Message);
+        Console.WriteLine("Our shop only accepts orders formatted in whole numbers.");
+        Console.WriteLine("If you wish to resubmit your order, type yes to continue.");
+        string input = Console.ReadLine();
+        if (input == "yes")
+        {
+          Main();
+        }        
+      }
     }
   }
 }
